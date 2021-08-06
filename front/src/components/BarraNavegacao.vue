@@ -18,6 +18,7 @@
 import BarraNavagecaoLoggedIn from './BarraNavagecaoLoggedIn.vue';
 import BarraNavagecaoLoggedOut from './BarraNavagecaoLoggedOut.vue';
 
+import { mapGetters } from 'vuex';
 
 export default {
   components: { 
@@ -27,10 +28,12 @@ export default {
     },
     
   computed: {
-    usuarioEstaLogado(){
-    //   return Boolean(localStorage.getItem('token'));
-      return Boolean(this.$store.state.token);
-    }
+    // usuarioEstaLogado(){
+    // //   return Boolean(localStorage.getItem('token'));
+    //   return this.$store.getters.usuarioEstaLogado;
+    // }
+
+    ...mapGetters(['usuarioEstaLogado'])
 
 
   },
