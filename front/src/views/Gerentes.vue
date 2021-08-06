@@ -11,19 +11,23 @@
 import Gerente from '@/components/Gerente.vue'
 
 export default {
+
   components: {
     Gerente
   },
+
   data() {
     return {
       gerentes: []
     }
   },
-  mounted () {
+
+  mounted () {    
     this.$http.get('gerentes')
       .then(response => this.gerentes = response.data)
       .catch(erro=> console.log(erro))
-  }
+  },
+ 
 }
 </script>
 
